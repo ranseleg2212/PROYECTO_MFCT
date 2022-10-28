@@ -1,0 +1,32 @@
+.nom {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 5px;
+    padding-bottom: 5px ;
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(180deg, rgb(0, 102, 255),rgb(4, 0, 255));
+    background-clip:text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.encabezado p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: justify;
+    
+}
+
+
+
+.nuevo {
+    display: flex;
+}
+.nuevo img {
+    height: 150px;
+    width: 150px;
+}
+ 
+.nuevo {
+    margin-right: 20px;
+}
