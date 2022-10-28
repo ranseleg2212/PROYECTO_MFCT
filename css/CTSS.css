@@ -1,0 +1,146 @@
+/*CSS DE LA PERSONALIZACIÓN*/
+
+/*IMAGEN DE LA BARRA DE NAVEGACIÓN*/
+.navbar-brand img{
+  width: 2cm;
+  height: 2cm;
+}
+
+/*HEADER*/
+.bg-primary {
+  background-color: #065cba;
+}
+
+/*BARRA DE NAVEGACIÓN*/
+.bg-dark {
+  background-color: #e37b16!important;
+  padding: 0px;
+}
+
+/*TEXTO DEL HEADER(IPISA)*/
+.text-white {
+  color: #ffffff!important;
+}
+
+/* FOOTER */
+  
+footer a{
+  color: #ffffff;
+}
+footer a:hover{
+  color: #e37b16;
+  font-size:large;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-bottom{
+  background: #065cba;
+  padding: 2em;
+}
+.footer-top{
+  background: #065cba;  
+}
+
+.footer-middle{
+  background:#065cba;
+ padding-top: 2em;
+ color: white;
+}
+
+.sociales a{
+  color:white;
+  text-align: center;
+}
+
+.sociales a:hover{
+  color:#e37b16;
+  font-size: larger;
+}
+
+.copy {
+  color:white;
+}
+
+/* FIN FOOTER */
+
+/*IMAGEN DE LAS CARTAS*/
+.card-img-top{
+  width: 100%;
+  height: 191.98px;
+}
+/*FIN IMAGEN CARTAS*/
+
+/*EFECTO A LAS CARTAS*/
+#carta_hover{
+    transition: all 250ms;
+}
+
+.row:hover #carta_hover:not(:hover){
+  opacity: 0.3;
+}
+/*FIN EFECTO CARTAS*/
+
+.card-footer a{
+  width: 100%;
+  background-color: #065cba!important;
+  border-color: #065cba!important;
+}
+
+.card-footer a:hover{
+  width: 100%;
+  background-color:#e37b16!important;
+  border-color: #e37b16!important;
+}
+
+#pqip{
+  color: white;
+}
+
+/*FIN DEL CSS DE LA PERSONALIZACIÓN*/
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+ul {
+    color: black;
+    size: 18px;
+    box-align: center;
+}
+
+p {
+color: rgb(0, 0, 0);
+
+}
+
+.sociales{
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+}
+
+ .footer-pad li{
+color: white;
+ }
+
+
+.card-title{
+  color: rgb(0, 22, 95);
+}
+
+
+.text-white-50 {
+  color: rgb(255, 255, 255)!important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color:#ffffff;
+}
+
+
+
+
