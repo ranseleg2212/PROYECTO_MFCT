@@ -1,0 +1,36 @@
+#formulario_contenedor{
+    border-width: 2px!important;
+    border-color: black!important;
+    border-radius: 10px!important;
+    padding: 15px!important;
+    margin-top: 20px!important;
+    margin-bottom: 20px!important;
+    margin-right: 20px!important;
+    margin-left: 20px!important;
+    border-style: double;
+}
+
+select{
+    width: 100%;
+}
+.nrd{
+    width: 100%;
+    height: 40px;
+    /*border-bottom-color: black;
+            border-top-color:transparent;
+            border-right-color:transparent;
+            border-left-color:transparent;
+    */
+}
+textarea{
+    width: 100%;
+}
+.srd{
+    font-size: 18px;
+}
+.nrd:focus{
+    background-color: transparent!important;
+}
+.btn{
+    background-color: darkblue!important;
+}

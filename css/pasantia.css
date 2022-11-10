@@ -10,23 +10,45 @@
     color: transparent;
 }
 
-.encabezado p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 40px;
-    text-align: justify;
-    
+
+/*Código Ransel*/
+
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.card-img-top{
+    height: 150px!important;
+    width: 152px!important;
+    align-self: center;
+    margin-top: 3px;
+}
+.card-title{
+    text-align: center;
+}
+.card-text{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+#informaciones{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    border-color:gainsboro!important;
+    border: 3px;
+    border-style:solid;
+}
+#titulo{
+    color:#065cba;
+}
+#lista{
+    margin-left: 20px;
+}
+.row{
+    padding: 10px;
 }
 
-
-
-.nuevo {
-    display: flex;
-}
-.nuevo img {
-    height: 150px;
-    width: 150px;
-}
- 
-.nuevo {
-    margin-right: 20px;
-}

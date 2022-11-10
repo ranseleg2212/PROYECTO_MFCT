@@ -140,6 +140,9 @@ color: white;
 .navbar-dark .navbar-nav .nav-link {
   color:#ffffff;
 }
+.container{
+  padding: 0px!important;
+}
 
 
 
