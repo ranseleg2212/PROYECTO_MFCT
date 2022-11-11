@@ -206,7 +206,7 @@
 
 </html>
 <?php
-$conexion = mysqli_connect('localhost', 'root', '', 'tema4')or die(mysqli_error($mysqli));
+$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct')or die(mysqli_error($mysqli));
 insertar($conexion);
 function insertar($conexion){
     $nombre = $_POST['nombre_txt']??null;
