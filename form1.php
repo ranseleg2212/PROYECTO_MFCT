@@ -10,6 +10,10 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/fontello.css">
     <link href="css/CTSS.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
     <title>Estudiantes y egresados</title>
 </head>
 
@@ -38,15 +42,22 @@
           <li class="nav-item">
             <a class="nav-link" href="familiares.html">FAMILIARES</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="form2.php">Registro centros de trabajo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="form1.php">Estudiantes y egresados</a>
-            <span class="sr-only">(current)</span>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Registro de vacantes</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Formularios MFCT
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="nav-link dropdown-item" href="form2.php">Registro centros de trabajo</a>
+              </li>
+              <li>
+                <a class="nav-link dropdown-item" href="form1.php">Estudiantes y egresados</a>
+              </li>
+              <li>
+                <a class="nav-link dropdown-item" href="form3.php">Registro de vacantes</a>
+              </li>
+              </ul>
           </li>
         </ul>
       </div>
@@ -408,7 +419,8 @@
 
   </footer>
   <!--Fin Footer-->
-
+  <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

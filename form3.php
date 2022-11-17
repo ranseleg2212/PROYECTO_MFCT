@@ -1,40 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="im/logo.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-
-  <title>IPISA-Pasantía</title>
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacantes</title>
+  <link rel="stylesheet" href="css/form3.css">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom styles for this template -->
   <link href="css/business-frontpage.css" rel="stylesheet">
-
-  <link href="css/pasantia.css" rel="stylesheet">
-
+  <link href="css/form3.css" rel="stylesheet" type="text/css">
   <!--NO CAMBIEN NADA EN EL CTSS-->
   <link href="css/CTSS.css" rel="stylesheet">
-
   <link rel="stylesheet" href="css/fontello.css">
-
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
 
-
 </head>
 
 <body>
-  <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#"> <img src="im/logo.png"></a>
@@ -50,7 +42,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pasantia.html">PASANTÍA</a>
-            <span class="sr-only">(current)</span>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="colaboradores.html">COLABORADORES</a>
@@ -79,9 +70,7 @@
       </div>
     </div>
     </div>
-    </div>
   </nav>
-  <!--Fin Barra de navegación-->
 
   <!-- Header -->
   <header class="bg-primary py-5 mb-5">
@@ -91,162 +80,77 @@
           <h1 class="display-4 text-white mt-5 mb-2"><strong>Instituto Politécnico Industrial de Santiago IPISA</strong>
           </h1>
           <p class="lead mb-5 text-white-50">El Instituto Politécnico Industrial de Santiago (IPISA), es una institución
-            educativa técnico profesional con uno de los más altos niveles de expansión y crecimiento en este tipo de
-            modelo de educación, así como también, acorde a la vanguardia de los nuevos tiempos.</p>
+            educativa técnico profesional con uno de los más altos niveles de expansión y crecimient
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </header>
   <!--Fin Header-->
-  <div class="contenedor">
-    <h1 id="titulo"> Pasantia </h1>
+  <h2 id="titulo">Registro de vacantes</h2>
+  <div id="formulario">
+    <form method="POST">
 
-    <!--Primera parte del cuerpo-->
-    <div id="informaciones">
 
-      <h2> <b>Módulo de Formación en Centros de Trabajo (MFCT)</b> </h2>
-      <p>
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="nme">Nombre de la empresa</label>
+          <input type="text" name="nme" class="form-control">
+        </div>
+        <div class="form-group col">
+          <label for="nmp"> Nombre del puesto </label>
+          <input type="text" name="nmp" class="form-control">
+        </div>
+      </div>
 
-        El Módulo de formación en Centros de Trabajo (MFCT),
-        es un bloque coherente de formación
-        específica, constituido por un conjunto
-        de resultados de aprendizaje y unos criterios de
-        evaluación que orientan la realización de las actividades formativas de los alumnos en el
-        centro de trabajo, en el mismo se establece un proceso de aprendizaje, basado en una
-        formación eminentemente práctica, ubicada en un entorno productivo, donde el estudiante
-        puede desempeñar las actividades propias de su profesión y adquirir una competencia
-        profesional, regulada por el currículo en la ordenanza de cada familia profesional.
-        Se trata de:
-        <br> <br>
+      <label for="fnp"> Funciones o perfil del puesto</label>
+      <input type="text" name="fnp" class="form-control">
 
-      <ul id="lista">
-        <li>Generar procesos de aprendizaje en el contexto que aseguren el desarrollo de
-          competencias pertinentes.</li>
-        <li>Aportar a los estudiantes una experiencia profesional válida para su currículum
-          e interesante para el centro de trabajo.</li>
-        <li>Avanzar en la cooperación entre los centros educativos y las empresas
-          habilitando un proceso de retroalimentación al sistema educativo.</li>
-      </ul>
+      <label for="sdp"> Sueldo</label>
+      <input type="text" name="sdp" class="form-control">
 
-    </div>
-    <br>
-    <h3>Horas de pasantía de cada taller</h3>
-    <hr>
-    <!--CARTAS-->
-    <div class="row">
-      <div class="col-md-3 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/Cont.jpg" alt="" align="center">
-          <div class="card-body">
-            <h4 class="card-title">Gestión Administrativa y Tributaria</h4>
-               <h4 class="card-text">360 horas</h4>
-          </div>
-          <div class="card-footer">
-            <a href="https://ipisa.edu.do/index.php/gestion-administrativa-y-tributaria/" class="btn btn-danger">Más
-              información</a>
-          </div>
+      <label for="ube">Ubicacion</label>
+      <input type="text" name="ube" class="form-control">
+
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="tpc">Tipo de contrato</label>
+          <select name="tpc" class="form-control">
+            <option value="T">Temporal</option>
+            <option value="F">Fijo</option>
+          </select>
+        </div>
+        <div class="form-group col">
+          <label for="htb">Horario</label>
+          <input type="text" name="htb" class="form-control">
         </div>
       </div>
-      <div class="col-md-3 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/informatic.jpg" alt="" align="center">
-          <div class="card-body">
-            <h4 class="card-title">Desarrollo y Adm. de Aplicaciones Informáticas</h4>
-            <h4 class="card-text">360 horas</h4>
-          </div>
-          <div class="card-footer">
-            <a href="https://ipisa.edu.do/index.php/gestion-administrativa-y-tributaria/" class="btn btn-danger">Más
-              información</a>
-          </div>
+
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="ccv">Correo al que se debe enviar el currículum</label>
+          <input type="text" name="ccv" class="form-control">
+        </div>
+        <div class="form-group col">
+          <label for="psc">Persona de contacto</label>
+          <input type="text" name="psc" class="form-control">
+        </div>
+        <div class="form-group col">
+          <label for="tlf">Telefono</label>
+          <input type="text" name="tlf" class="form-control">
         </div>
       </div>
-      <div class="col-md-3 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/cofe.png" alt="" align="center">
-          <div class="card-body">
-            <h4 class="card-title">Confección y Patronaje</h4>
-            <h4 class="card-text">360 horas</h4>
-          </div>
-          <div class="card-footer">
-            <a href="https://ipisa.edu.do/index.php/gestion-administrativa-y-tributaria/" class="btn btn-danger">Más
-              información</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/elect.png" alt="" align="center">
-          <div class="card-body">
-            <h4 class="card-title">Equipos Electrónicos</h4>
-            <h4 class="card-text">360 horas</h4>
-          </div>
-          <div class="card-footer">
-            <a href="https://ipisa.edu.do/index.php/gestion-administrativa-y-tributaria/" class="btn btn-danger">Más
-              información</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--SEGUNDA FILA DE CARTAS-->
-    <div class="row">
-      <div class="col-md-3 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/electr.png" alt="" align="center">
-          <div class="card-body">
-            <h4 class="card-title">Instalaciones Eléctricas</h4>
-            <h4 class="card-text">360 horas</h4>
-          </div>
-          <div class="card-footer">
-            <a href="https://ipisa.edu.do/index.php/gestion-administrativa-y-tributaria/" class="btn btn-danger">Más
-              información</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/ebas.png" alt="" align="center">
-          <div class="card-body">
-            <h4 class="card-title">Muebres y Estructura de la Madera</h4>
-            <h4 class="card-text">360 horas</h4>
-          </div>
-          <div class="card-footer">
-            <a href="https://ipisa.edu.do/index.php/gestion-administrativa-y-tributaria/" class="btn btn-danger">Más
-              información</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/mecaniza.png" alt="" align="center">
-          <div class="card-body">
-            <h4 class="card-title">Mecánica Industrial</h4>
-            <h4 class="card-text">360 horas</h4>
-          </div>
-          <div class="card-footer">
-            <a href="https://ipisa.edu.do/index.php/gestion-administrativa-y-tributaria/" class="btn btn-danger">Más
-              información</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/mec.png" alt="" align="center">
-          <div class="card-body">
-            <h4 class="card-title">Mecánica Automotriz</h4>
-            <h4 class="card-text">360 horas</h4>
-          </div>
-          <div class="card-footer">
-            <a href="https://ipisa.edu.do/index.php/gestion-administrativa-y-tributaria/" class="btn btn-danger">Más
-              información</a>
-          </div>
-        </div>
-      </div>
-    </div>
+      <input type="submit" value='Enviar' class="btn btn-primary btn-lg btn-block">
+    </form>
   </div>
-  <footer>
-    <!-- Footer -->
+  <!-- Footer -->
 
-    <div class="m-t-3"></div>
+  <div class="m-t-3"></div>
+
+  <footer>
+
+
     <footer class="mainfooter" role="contentinfo">
       <div class="footer-top p-y-2">
         <div class="container-fluid">
@@ -292,9 +196,10 @@
               <!--Column1-->
               <div class="footer-pad">
                 <h4>¿Por qué IPISA?</h4>
-                <p id="pqip">El Instituto Politécnico Industrial de Santiago (IPISA), es una institución educativa
-                  técnico profesional con uno de los más altos niveles de expansión y crecimiento en este tipo de modelo
-                  de educación, así como también, acorde a la vanguardia de los nuevos tiempos.</p>
+                <p id="pqip">El Instituto Politécnico Industrial de Santiago (IPISA),
+                  es una institución educativa técnico profesional con uno de los más
+                  altos niveles de expansión y crecimiento en este tipo de modelo de educación, así como también, acorde
+                  a la vanguardia de los nuevos tiempos.</p>
               </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -342,8 +247,31 @@
       </div>
       </div>
       </div>
-      <!--Fin Footer-->
+
+
     </footer>
+    <!--Fin Footer-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+
+</html>
+<?php
+    $conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct')or die(mysqli_error($mysqli));
+    insertar($conexion);
+    function insertar($conexion){
+    $nme=$_POST['nme']??null;
+    $nmp=$_POST['nmp']??null;
+    $fnp=$_POST['fnp']??null;
+    $sdp=$_POST['sdp']??null;
+    $ube=$_POST['ube']??null;
+    $tpc=$_POST['tpc']??null;
+    $htb=$_POST['htb']??null;
+    $ccv=$_POST['ccv']??null;
+    $psc=$_POST['psc']??null;
+    $tlf=$_POST['tlf']??null;
+    $queryi="INSERT INTO form_tres(nombre_empresa, puesto, funciones_perfil, sueldo, ubicacion, tipo_contacto, horario, correo_cv, contacto_persona, telefono) values('$nme', '$nmp', '$fnp', $sdp, '$ube', '$tpc', '$htb', '$ccv','$psc', '$tlf')";
+    mysqli_query($conexion, $queryi);
+    mysqli_close($conexion);
+ }
+?>
