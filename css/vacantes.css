@@ -1,0 +1,24 @@
+#contenido_web{
+    padding: 10px;
+}
+#buscar_btn{
+    background-color: #065cba !important;
+    color: #ffff;
+    font-weight: bold;
+}
+.card{
+    margin-bottom: 10px;
+}
+abbr{
+    font-weight: bold;
+    color: #065cba;
+    font-size: 16px;
+}
+.card-header{
+    color: darkred;
+    font-size: 24px;
+}
+.card-text{
+    color: #065cba;
+    font-size: 20px;
+}

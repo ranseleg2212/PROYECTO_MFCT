@@ -117,8 +117,8 @@
         <div class="form-group col">
           <label for="tpc">Tipo de contrato</label>
           <select name="tpc" class="form-control">
-            <option value="T">Temporal</option>
-            <option value="F">Fijo</option>
+            <option value="Temporal">Temporal</option>
+            <option value="Fijo">Fijo</option>
           </select>
         </div>
         <div class="form-group col">
@@ -142,6 +142,7 @@
         </div>
       </div>
       <input type="submit" value='Enviar' class="btn btn-primary btn-lg btn-block">
+      <a href="ver_vacantes.php" class="btn btn-primary btn-lg btn-block">Consultar Vacantes</a>
     </form>
   </div>
   <!-- Footer -->

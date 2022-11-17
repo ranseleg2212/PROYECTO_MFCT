@@ -89,7 +89,7 @@
             <br>
             <button type="submit" id="entrar_btn" class="btn btn-lg btn-primary">Entrar</button>
             <br>
-            <a id="crear_a" href="#">¿No tienes una cuenta?</a>
+            <a id="crear_a" href="form2.php">¿No tienes una cuenta?</a>
         </form>
     </div>
     <!-- Footer -->
@@ -206,3 +206,12 @@
 </body>
 
 </html>
+<?php
+$email = $_POST['correo_log_txt'];
+$clave = $_POST['clave_log_txt'];
+$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct')or die(mysqli_error($mysqli));
+$consulta = "SELECT * FROM form_dos WHERE email = '$email'  AND clave  = '$clave'";
+
+mysqli_query($conexion, $consulta);
+mysqli_close($conexion);
+?>
