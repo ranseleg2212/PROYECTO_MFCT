@@ -1,3 +1,11 @@
+.dropdown-menu{
+  background-color: #065cba !important;
+}
+.dropdown-item:hover{
+  background-color: #065cba;
+  font-weight: bold;
+  color: #ffffff;
+}
 /*CSS DE LA PERSONALIZACIÓN*/
 
 /*IMAGEN DE LA BARRA DE NAVEGACIÓN*/
@@ -143,6 +151,12 @@ color: white;
 .container{
   padding: 0px!important;
 }
+
+/*
+dropdown menu
+*/
+
+
 
 
 
