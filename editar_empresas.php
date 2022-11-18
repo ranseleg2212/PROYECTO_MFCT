@@ -1,3 +1,11 @@
+<?php
+$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct') or die(mysqli_error($mysqli));
+$id = $_REQUEST['id'] ?? null;
+$queryo = "SELECT * FROM form_dos WHERE id_empresa = $id";
+$data = mysqli_query($conexion, $queryo);
+$total = mysqli_num_rows($data);
+$row = mysqli_fetch_assoc($data);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,16 +91,18 @@
   <!--Fin Header-->
 
     <div id="formulario_contenedor">
-        <form method="POST" action="form2.php">
+        <form method="POST">
+        <label for="nombre_txt">Id del registro</label>
+                    <input type="text" name="id_txt" class="nrd form-control" value="<?php echo $id ?>">
             <!--RNC Y NOMBRE DE LA EMPRESA-->
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="nombre_txt">Nombre de la empresa</label>
-                    <input type="text" name="nombre_txt" class="nrd form-control">
+                    <input type="text" name="nombre_txt" class="nrd form-control" value="<?php echo $row["nombre"]??null?>">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="rnc_txt">RNC</label>
-                    <input type="text" name="rnc_txt" class="nrd form-control">
+                    <input type="text" name="rnc_txt" class="nrd form-control" value="<?php echo $row["rnc"]??null?>">
                 </div>
             </div>
             <!-- FIN RNC Y NOMBRE DE LA EMPRESA-->
@@ -100,6 +110,7 @@
                 <div class="form-group col">
                     <label for="identidad_rdb">Desea que se conozca la identidad de la empresa?</label>
                     <select name="identidad_slt" class="form-control">
+                      <option value="<?php echo $row["cnc_identidad"]??null?>"><?php echo $row["cnc_identidad"]??null?></option>
                         <option value="si">Si</option>
                         <option value="no">No</option>
                     </select>
@@ -108,6 +119,7 @@
                 <div class="form-group col">
                     <label for="disposicion_rdb">Dispone su empresa para ser un centro de trabajo?</label>
                     <select name="disposicion_slt" class="form-control">
+                    <option value="<?php echo $row["dispone"]??null?>"><?php echo $row["dispone"]??null?></option>
                         <option value="si">Si</option>
                         <option value="no">No</option>
                     </select>
@@ -116,6 +128,7 @@
                 <div class="form-group col">
                     <label for="alcance_rdb">Alcance de la empresa</label>
                     <select name="alcance_slt" class="form-control">
+                    <option value="<?php echo $row["alcance"]??null?>"><?php echo $row["alcance"]??null?></option>
                         <option value="local">Local/Nacional</option>
                         <option value="internacional">Internacional</option>
                     </select>
@@ -125,13 +138,14 @@
             <div class="form-group">
                 <label for="actividad_ta">Actividad económica de la empresa</label>
                 <br>
-                <textarea name="actividad_ta" class="form-control"></textarea>
+                <textarea name="actividad_ta" class="form-control"><?php echo $row["dedicacion"]?></textarea>
             </div>
             <div class="form-row">
                 <div class="form-group col">
                     <label for="industria_slt">Industria</label>
                     <br>
                     <select name="industria_slt" id="" class="form-control">
+                    <option value="<?php echo $row["industria"]??null?>"><?php echo $row["industria"]??null?></option>
                         <option value="Agrícola">Agrícola</option>
                         <option value="Comercio">Comercio</option>
                         <option value="Ganadería">Ganadería</option>
@@ -146,6 +160,7 @@
                     <label for="tamano_slt">Tamaño de la empresa</label>
                     <br>
                     <select name="tamano_slt" id="" class="form-control">
+                    <option value="<?php echo $row["tamano"]??null?>"><?php echo $row["tamano"]??null?></option>
                         <option value="Micro">Micro</option>
                         <option value="Pequeña">Pequeña</option>
                         <option value="Mediana">Mediana</option>
@@ -159,30 +174,31 @@
                 <div class="col">
                     <label for="direccion_txt">Dirección</label>
                     <br>
-                    <input type="text" name="direccion_txt" class="nrd form-control">
+                    <input type="text" name="direccion_txt" class="nrd form-control" value="<?php echo $row["direccion"]??null?>">
                 </div>
 
                 <div class="col">
                     <label for="sector_txt">Sector</label>
                     <br>
-                    <input type="text" name="sector_txt" class="nrd form-control">
+                    <input type="text" name="sector_txt" class="nrd form-control" value="<?php echo $row["sector"]??null?>">
                 </div>
 
                 <div class="form-group col">
                     <label for="seccion_txt">Sección</label>
                     <br>
-                    <input type="text" name="seccion_txt" class="nrd form-control">
+                    <input type="text" name="seccion_txt" class="nrd form-control" value="<?php echo $row["seccion"]??null?>">
                 </div>
                 <div class="form-group col">
                     <label for="municipio_txt">Municipio</label>
                     <br>
-                    <input type="text" name="municipio_txt" class="nrd form-control">
+                    <input type="text" name="municipio_txt" class="nrd form-control" value="<?php echo $row["municipio"]??null?>">
                 </div>
 
                 <div class="form-group col">
                     <label for="provincia_slt">Provincia</label>
                     <br>
                     <select name="provincia_slt" class="form-control">
+                    <option value="<?php echo $row["provincia"]??null?>"><?php echo $row["provincia"]??null?></option>
                         <option value="Santiago">Santiago</option>
                         <option value="Azua">Azua</option>
                         <option value="La Vega">La Vega</option>
@@ -222,6 +238,7 @@
                 <label for="pais_slt">Pais de operación</label>
                 <br>
                 <select name="pais_slt" disabled class="form-control">
+                <option value="<?php echo $row["operaciones"]??null?>"><?php echo $row["operaciones"]??null?></option>
                     <option value="República Dominicana">República Dominicana</option>
                 </select>
             </div>
@@ -230,46 +247,46 @@
                 <div class="form-group col">
                     <label for="telp_txt">Teléfono principal</label>
                     <br>
-                    <input type="tel" name="telp_txt" class="nrd">
+                    <input type="tel" name="telp_txt" class="nrd" value="<?php echo $row["tel_principal"]??null?>">
                 </div>
 
                 <div class="form-group col">
                     <label for="teld_txt">Teléfono directo</label>
                     <br>
-                    <input type="tel" name="teld_txt" class="nrd">
+                    <input type="tel" name="teld_txt" class="nrd" value="<?php echo $row["tel_directo"]??null?>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="email_txt">Correo electrónico</label>
                 <br>
-                <input type="email" name="email_txt" class="nrd">
+                <input type="email" name="email_txt" class="nrd" value="<?php echo $row["email"]??null?>">
             </div>
 
             <div class="form-group">
                 <label for="clave_txt">Contraseña</label>
                 <br>
-                <input type="password" name="clave_txt" class="nrd">
+                <input type="password" name="clave_txt" class="nrd" value="<?php echo $row["clave"]??null?>">
 
             </div>
             <div class="form-row">
             <div class="form-group col">
                     <label for="cont_txt">Contacto</label>
                     <br>
-                    <input type="text" name="cont_txt" class="nrd">
+                    <input type="text" name="cont_txt" class="nrd" value="<?php echo $row["contacto"]??null?>">
                 </div>
                 <div class="form-group col">
                     <label for="cont_tel_txt">Teléfono y extención del contacto</label>
                     <br>
-                    <input type="text" name="cont_tel_txt" class="nrd">
+                    <input type="text" name="cont_tel_txt" class="nrd" value="<?php echo $row["tel_ext"]??null?>">
                 </div>
                 <div class="form-group col">
                     <label for="cont_ema_txt">Correo</label>
                     <br>
-                    <input type="email" name="cont_ema_txt" class="nrd">
+                    <input type="email" name="cont_ema_txt" class="nrd" value="<?php echo $row["correo_contacto"]??null?>">
                 </div>
             </div>
 
-            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Registrar mi empresa" class="nrd">
+            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Editar la empresa" class="nrd">
             <br>
         </form>
         <a href="ver_empresas.php" class="btn btn-primary btn-lg btn-block">Consultar empresas</a>
@@ -387,6 +404,7 @@
 
 </html>
 <?php
+
 $conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct')or die(mysqli_error($mysqli));
 if($_POST){
   insertar($conexion);
@@ -395,6 +413,7 @@ if($_POST){
 }
 
 function insertar($conexion){
+  $id = $_REQUEST['id'] ?? null;
     $nombre = $_POST['nombre_txt']??null;
     $rnc = $_POST['rnc_txt']??null;
     $identidad = $_POST['identidad_slt']??null;
@@ -417,10 +436,10 @@ function insertar($conexion){
     $cont = $_POST['cont_txt']??null;
     $cont_tl = $_POST['cont_tel_txt']??null;
     $cont_ema = $_POST['cont_ema_txt']??null;
-    $consulta = "INSERT INTO proyecto_mfct.form_dos (rnc, nombre, cnc_identidad, dispone, alcance, dedicacion, industria, tamano, direccion, seccion, sector, municipio, provincia, operaciones, tel_principal, tel_directo, email, clave, contacto, tel_ext, correo_contacto) 
-    VALUES ('$rnc', '$nombre', '$identidad', '$disposicion', '$alcance', '$actividad', '$industria', '$tamano', '$direccion', '$seccion', '$sector', '$municipio', '$provincia', '$operaciones', '$telp', '$teld', '$correo', '$clave', '$cont', '$cont_tl', '$cont_ema');";
+    $consulta = "UPDATE form_dos SET rnc='$rnc', nombre='$nombre', cnc_identidad='$identidad', dispone='$disposicion', alcance='$alcance', dedicacion='$actividad', industria='$industria', tamano='$tamano', direccion='$direccion', seccion='$seccion', sector='$sector', municipio='$municipio', provincia='$provincia', operaciones='$operaciones', tel_principal='$telp', tel_directo='$teld', email='$correo', clave='$clave', contacto='$cont', tel_ext='$cont_tl', correo_contacto='$cont_ema' WHERE id_empresa = $id";
  
 mysqli_query($conexion, $consulta);
-    mysqli_close($conexion);
+header("location:ver_empresas.php");
+mysqli_close($conexion);
 }
 ?>
