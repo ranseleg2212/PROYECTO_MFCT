@@ -105,7 +105,7 @@
         <?php
         $buscar = $_POST['buscar_txt'] ?? null;
         $consulta;
-        $conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct') or die(mysqli_error($mysqli));
+        $conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfc') or die(mysqli_error($mysqli));
         if ($buscar == " ") {
             $consulta = "SELECT * FROM form_uno";
         } else {
@@ -134,7 +134,7 @@
                         <p class="card-text"><?php echo "Licencia de conducir: " . $row["licencia"] ?></p>
                         <p class="card-text"><?php echo "Vehículo propio: " . $row["vh_propio"] ?></p>
                         <p class="card-text"><?php echo "Experiencia: " . $row["experiencia"] ?></p>
-                        <p class="card-text"><?php echo "Permanencia en área de trabajo: " . $row["job_area"] ?></p>
+                       
                         <adress class="card-text">
                             <abbr title="Phone">Tel Residencial: </abbr><?php echo $row["tel_residencial"] ?><br>
                             <abbr title="Phone">Tel Móvil: </abbr><?php echo $row["tel_movil"] ?><br>

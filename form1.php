@@ -427,7 +427,7 @@
 
 </html>
 <?php
-$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct') or die(mysqli_error($mysqli));
+$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfc') or die(mysqli_error($mysqli));
 if ($_POST) {
     insertar($conexion);
 }
@@ -464,11 +464,10 @@ function insertar($conexion)
     $corr = $_POST['correo_txt'] ?? null;
     $clav = $_POST['clave_txt'] ?? null;
     $expe = $_POST['experiencia_txt'] ?? null;
-    $tbar = $_POST['area_slt'] ?? null;
-    $curr = $_POST['cv_file'] ?? null;
-    $consulta = "INSERT INTO form_uno(graduacion, institucion, curso, matricula, cedula, carrera, tecnico_basico, nombres, apellidos, nacimiento, sexo, direccion, sector, seccion, municipio, provincia, nacionalidad, tel_residencial, tel_movil, licencia, vh_propio, email, clave, experiencia, cv, job_area) VALUES('$grad','$inst',
-    '$curs','$matr','$cedu','$carr','$tcbc','$nomb','$apel','$fech','$sexo','$dire','$sect','$secc','$muni','$prov',
-    '$naci','$tlrs','$tlmv','$lccn','$vhpr','$corr','$clav','$expe','$curr','$tbar')";
+  
+    $consulta = "INSERT INTO form_uno(graduacion, institucion, curso, matricula, cedula, carrera, tecnico_basico, nombres, apellidos, nacimiento, sexo, direccion, sector, seccion, municipio, provincia, nacionalidad, tel_residencial, tel_movil, licencia, vh_propio, email, clave, experiencia) VALUES('$grad','$inst',
+    '$curr','$matr','$cedu','$carr','$tcbc','$nomb','$apel','$fech','$sexo','$dire','$sect','$secc','$muni','$prov',
+    '$naci','$tlrs','$tlmv','$lccn','$vhpr','$corr','$clav','$expe')";
 
     mysqli_query($conexion, $consulta);
     mysqli_close($conexion);

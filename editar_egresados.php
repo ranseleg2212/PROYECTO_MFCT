@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct') or die(mysqli_error($mysqli));
+$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfc') or die(mysqli_error($mysqli));
 $id = $_REQUEST['id'] ?? null;
 $queryo = "SELECT * FROM form_uno WHERE id_estudiante = $id";
 $data = mysqli_query($conexion, $queryo);
@@ -448,7 +448,7 @@ $fcs = $dia . $mes . $ann;
 
 </html>
 <?php
-$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct') or die(mysqli_error($mysqli));
+$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfc') or die(mysqli_error($mysqli));
 if ($_POST) {
     insertar($conexion);
 }
@@ -486,11 +486,12 @@ function insertar($conexion)
     $corr = $_POST['correo_txt'] ?? null;
     $clav = $_POST['clave_txt'] ?? null;
     $expe = $_POST['experiencia_txt'] ?? null;
-    $tbar = $_POST['area_slt'] ?? null;
+   
     $curr = $_POST['cv_file'] ?? null;
-    $consulta = "UPDATE form_uno SET graduacion='$grad', institucion='$inst', curso='$curs', matricula='$matr', cedula='$cedu', carrera='$carr', tecnico_basico='$tcbc', nombres='$nomb', apellidos='$apel', nacimiento='$fech', sexo='$sexo', direccion='$dire', sector='$sect', seccion='$secc', municipio='$muni', provincia='$prov', nacionalidad='$naci', tel_residencial='$tlrs', tel_movil='$tlmv', licencia='$lccn', vh_propio='$vhpr', email='$corr', clave='$clav', experiencia='$expe', job_area='$tbar' WHERE id_estudiante = $id";
+    $consulta = "UPDATE form_uno SET graduacion='$grad', institucion='$inst', curso='$curs', matricula='$matr', cedula='$cedu', carrera='$carr', tecnico_basico='$tcbc', nombres='$nomb', apellidos='$apel', nacimiento='$fech', sexo='$sexo', direccion='$dire', sector='$sect', seccion='$secc', municipio='$muni', provincia='$prov', nacionalidad='$naci', tel_residencial='$tlrs', tel_movil='$tlmv', licencia='$lccn', vh_propio='$vhpr', email='$corr', clave='$clav', experiencia='$expe' WHERE id_estudiante = $id";
 
     mysqli_query($conexion, $consulta);
     mysqli_close($conexion);
+   
 }
 ?>
