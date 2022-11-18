@@ -1,3 +1,18 @@
+<?php
+$conexion = mysqli_connect('localhost', 'root', '', 'proyecto_mfct') or die(mysqli_error($mysqli));
+$id = $_REQUEST['id'] ?? null;
+$queryo = "SELECT * FROM form_uno WHERE id_estudiante = $id";
+$data = mysqli_query($conexion, $queryo);
+$total = mysqli_num_rows($data);
+$row = mysqli_fetch_assoc($data);
+$fecha = $row["nacimiento"];
+//CAMBIAR FORMATO DE FECHA
+$fsg = explode("-", $fecha);
+$dia = $feca[0] ?? null;
+$mes = $feca[1] ?? null;
+$ann = $feca[2] ?? null;
+$fcs = $dia . $mes . $ann;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +100,8 @@
 
     <div id="formulario">
         <form method="POST">
-
+        <label for="matricula_txt">Id del estudiante</label>
+                    <input type="text" name="id_txt" class="form-control" value="<?php  echo $id ?>">
             <!--PRIMERA FILA DE INPUTS-->
             <div class="form-row">
 
@@ -93,6 +109,7 @@
 
                     <label for="institucion_slt">Institución a la que pertenece</label>
                     <select name="institucion_slt" id="" class="form-control">
+                      <option value="<?php echo $row["institucion"]??null?>"><?php echo $row["institucion"]??null?></option>
                         <option value="IPISA">Instituto politecnico industrial de santiago IPISA</option>
                         <option value="IPIBOSCO">Instituto politecnico industrial Don bosco</option>
                         <option value="IPL">Instituto politecnico Loyola </option>
@@ -101,12 +118,13 @@
 
                 <div class="form-group col">
                     <label for="matricula_txt">Matrícula</label>
-                    <input type="text" name="matricula_txt" class="form-control">
+                    <input type="text" name="matricula_txt" class="form-control"  value="<?php echo $row["matricula"] ?? null ?>">
                 </div>
 
                 <div class="form-group col">
                     <label for="carrera_slt">Carrera</label>
                     <select name="carrera_slt" class="form-control">
+                    <option value="<?php echo $row["carrera"]??null?>"><?php echo $row["carrera"]??null?></option>
                         <option value="Informática">Informatica</option>
                         <option value="Gestión Administrativa">Contabilidad</option>
                         <option value="Mecánica Industrial">Idustrial</option>
@@ -122,6 +140,7 @@
 
                     <label for="curso_slt">Curso</label>
                     <select name="curso_slt" id="" class="form-control">
+                    <option value="<?php echo $row["curso"]??null?>"><?php echo $row["curso"]??null?></option>
                         <option value="Primero">1ro</option>
                         <option value="Segundo">2do</option>
                         <option value="Tercero">3ro</option>
@@ -132,6 +151,7 @@
 
                     <label for="graduacion_slt">Año de graduación</label>
                     <select name="graduacion_slt" id="" class="form-control">
+                    <option value="<?php echo $row["graduacion"]??null?>"><?php echo $row["graduacion"]??null?></option>
                         <option value="2017-2018">2017-2018</option>
                         <option value="2018-2019">2018-2019</option>
                         <option value="2019-2020">2019-2020</option>
@@ -146,12 +166,13 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="cedula_txt">Cédula de identidad</label>
-                    <input type="text" name="cedula_txt" id="" class="form-control">
+                    <input type="text" name="cedula_txt" id="" class="form-control" value="<?php echo $row["cedula"] ?? null ?>">
                 </div>
                 <div class="form-group col">
 
                     <label for="tecbac_slt">Técnico Básico</label>
                     <select name="tecbac_slt" id="" class="form-control">
+                    <option value="<?php echo $row["tecnico_basico"]??null?>"><?php echo $row["tecnico_basico"]??null?></option>
                         <option value="N/A">N/A</option>
                     </select>
                 </div>
@@ -162,12 +183,12 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="nombres_txt">Nombres</label>
-                    <input type="text" name="nombres_txt" class="form-control">
+                    <input type="text" name="nombres_txt" class="form-control" value="<?php echo $row["nombres"] ?? null ?>">
                 </div>
 
                 <div class="form-group col">
                     <label for="fecha_dt">Fecha de nacimiento</label>
-                    <input type="date" name="fecha_dt" class="form-control">
+                    <input type="date" name="fecha_dt" class="form-control" value="<?php echo $fsg ?? null ?>">
                 </div>
             </div>
             <!--FIN SEGUNDA FILA DE INPUTS-->
@@ -176,12 +197,13 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="apellidos_txt">Apellidos</label>
-                    <input type="text" name="apellidos_txt" id="" class="form-control">
+                    <input type="text" name="apellidos_txt" id="" class="form-control" value="<?php echo $row["apellidos"] ?? null ?>">
                 </div>
                 <div class="form-group col">
 
                     <label for="sexo_slt">Sexo</label>
                     <select name="sexo_slt" id="" class="form-control">
+                    <option value="<?php echo $row["sexo"]??null?>"><?php echo $row["sexo"]??null?></option>
                         <option value="M">Hombre</option>
                         <option value="F">Mujer</option>
                     </select>
@@ -193,15 +215,16 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="direccion_txt">Dirección</label>
-                    <input type="text" name="direccion_txt" class="form-control">
+                    <input type="text" name="direccion_txt" class="form-control" value="<?php echo $row["direccion"] ?? null ?>">
                 </div>
                 <div class="form-group col">
                     <label for="seccion_txt">Sección</label>
-                    <input type="text" name="seccion" class="form-control">
+                    <input type="text" name="seccion" class="form-control" value="<?php echo $row["seccion"] ?? null ?>">
                 </div>
                 <div class="form-group col">
                     <label for="provincia_slt">Provincia</label>
                     <select name="provincia_slt" class="form-control">
+                    <option value="<?php echo $row["provincia"]??null?>"><?php echo $row["provincia"]??null?></option>
                         <option value="Santiago">Santiago</option>
                         <option value="Dajabón">Dajabon</option>
                         <option value="Azua">Azua</option>
@@ -213,12 +236,12 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="sector_txt">Sector</label>
-                    <input type="text" name="sector_txt" id="" class="form-control">
+                    <input type="text" name="sector_txt" id="" class="form-control"  value="<?php echo $row["sector"] ?? null ?>">
                 </div>
                 <div class="form-group col">
 
                     <label for="municipio_txt">Municipio</label>
-                    <input type="text" name="municipio_txt" id="" class="form-control">
+                    <input type="text" name="municipio_txt" id="" class="form-control" value="<?php echo $row["municipio"] ?? null ?>">
                 </div>
             </div>
             <!--FIN INTERMEDIA4-->
@@ -228,6 +251,7 @@
                 <div class="form-group col">
                     <label for="nacionaliad_slt">Pais de nacionalidad</label>
                     <select name="nacionalidad_slt" id="" class="form-control">
+                    <option value="<?php echo $row["nacionalidad"]??null?>"><?php echo $row["nacionalidad"]??null?></option>
                         <option value="RD">República Dominicana</option>
                         <option value="Cánada">Cánada</option>
                         <option value="USA">USA</option>
@@ -242,11 +266,11 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="tel_res_txt">Teléfono residencial</label>
-                    <input type="tel" name="tel_res_txt" id="" class="form-control">
+                    <input type="tel" name="tel_res_txt" id="" class="form-control" value="<?php echo $row["tel_residencial"] ?? null ?>">
                 </div>
                 <div class="form-group col">
                     <label for="tel_mov_txt">Teléfono movil</label>
-                    <input type="tel" name="tel_mov_txt" id="" class="form-control">
+                    <input type="tel" name="tel_mov_txt" id="" class="form-control" value="<?php echo $row["tel_movil"] ?? null ?>">
                 </div>
             </div>
             <!--FIN INTERMEDIA6-->
@@ -257,6 +281,7 @@
                 <div class="form-group col">
                     <label for="licencia_slt">Posee licencia de conducir?</label>
                     <select name="licencia_slt" id="" class="form-control">
+                    <option value="<?php echo $row["licencia"]??null?>"><?php echo $row["licencia"]??null?></option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                     </select>
@@ -264,6 +289,7 @@
                 <div class="form-group col">
                     <label for="vehiculo_slt">Posee vehículo propio?</label>
                     <select name="vehiculo_slt" id="" class="form-control">
+                    <option value="<?php echo $row["vh_propio"]??null?>"><?php echo $row["vh_propio"]??null?></option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                     </select>
@@ -274,11 +300,11 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="correo_txt">Correo electrónico</label>
-                    <input type="email" name="correo_txt" id="" class="form-control">
+                    <input type="email" name="correo_txt" id="" class="form-control" value="<?php echo $row["email"] ?? null ?>">
                 </div>
                 <div class="form-group col">
                     <label for="clave_txt">Contraseña</label>
-                    <input type="password" name="clave_txt" id="" class="form-control">
+                    <input type="password" name="clave_txt" id="" class="form-control" value="<?php echo $row["clave"] ?? null ?>">
                 </div>
             </div>
             <!--FIN INTERMEDIA7-->
@@ -288,11 +314,12 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="experiencia_txt">Experiencia</label>
-                    <input type="text" name="experiencia_txt" id="" class="form-control">
+                    <input type="text" name="experiencia_txt" id="" class="form-control" value="<?php echo $row["experiencia"] ?? null ?>">
                 </div>
                 <div class="form-group col">
                     <label for="area_slt">Desea trabajar en la misma área?</label>
                     <select name="area_slt" id="" class="form-control">
+                    <option value="<?php echo $row["job_area"]??null?>"><?php echo $row["job_area"]??null?></option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                     </select>
@@ -302,14 +329,8 @@
 
             <!--FIN INTERMEDIA9-->
 
-            <div class="form-row">
-                <div class="form-group col">
-                    <input type="file" class="custom-file-input" name="cv_file">
-                    <label class="custom-file-label" for="cv_file">CV</label>
-                </div>
-            </div>
             <!--FIN INTERMEDIA9-->
-            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Registrarme" class="nrd">
+            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Editar egresado" class="nrd">
             
         <a href="ver_egresados.php" class="btn btn-primary btn-lg btn-block">Consultar egresados</a>
         </form>
@@ -433,6 +454,7 @@ if ($_POST) {
 }
 function insertar($conexion)
 {
+  $id = $_REQUEST['id'] ?? null;
     $inst = $_POST['institucion_slt'] ?? null;
     $matr = $_POST['matricula_txt'] ?? null;
     $carr = $_POST['carrera_slt'] ?? null;
@@ -466,9 +488,7 @@ function insertar($conexion)
     $expe = $_POST['experiencia_txt'] ?? null;
     $tbar = $_POST['area_slt'] ?? null;
     $curr = $_POST['cv_file'] ?? null;
-    $consulta = "INSERT INTO form_uno(graduacion, institucion, curso, matricula, cedula, carrera, tecnico_basico, nombres, apellidos, nacimiento, sexo, direccion, sector, seccion, municipio, provincia, nacionalidad, tel_residencial, tel_movil, licencia, vh_propio, email, clave, experiencia, cv, job_area) VALUES('$grad','$inst',
-    '$curs','$matr','$cedu','$carr','$tcbc','$nomb','$apel','$fech','$sexo','$dire','$sect','$secc','$muni','$prov',
-    '$naci','$tlrs','$tlmv','$lccn','$vhpr','$corr','$clav','$expe','$curr','$tbar')";
+    $consulta = "UPDATE form_uno SET graduacion='$grad', institucion='$inst', curso='$curs', matricula='$matr', cedula='$cedu', carrera='$carr', tecnico_basico='$tcbc', nombres='$nomb', apellidos='$apel', nacimiento='$fech', sexo='$sexo', direccion='$dire', sector='$sect', seccion='$secc', municipio='$muni', provincia='$prov', nacionalidad='$naci', tel_residencial='$tlrs', tel_movil='$tlmv', licencia='$lccn', vh_propio='$vhpr', email='$corr', clave='$clav', experiencia='$expe', job_area='$tbar' WHERE id_estudiante = $id";
 
     mysqli_query($conexion, $consulta);
     mysqli_close($conexion);
