@@ -197,7 +197,7 @@
                 </div>
                 <div class="form-group col">
                     <label for="seccion_txt">Sección</label>
-                    <input type="text" name="seccion" class="form-control">
+                    <input type="text" name="seccion_txt" class="form-control">
                 </div>
                 <div class="form-group col">
                     <label for="provincia_slt">Provincia</label>
@@ -227,7 +227,7 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="nacionaliad_slt">Pais de nacionalidad</label>
-                    <select name="nacionalidad_slt" id="" class="form-control">
+                    <select name="nacionaliad_slt"  class="form-control">
                         <option value="RD">República Dominicana</option>
                         <option value="Cánada">Cánada</option>
                         <option value="USA">USA</option>

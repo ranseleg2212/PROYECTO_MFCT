@@ -219,7 +219,7 @@ $fcs = $dia . $mes . $ann;
                 </div>
                 <div class="form-group col">
                     <label for="seccion_txt">Sección</label>
-                    <input type="text" name="seccion" class="form-control" value="<?php echo $row["seccion"] ?? null ?>">
+                    <input type="text" name="seccion_txt" class="form-control" value="<?php echo $row["seccion"] ?? null ?>">
                 </div>
                 <div class="form-group col">
                     <label for="provincia_slt">Provincia</label>
@@ -250,7 +250,7 @@ $fcs = $dia . $mes . $ann;
             <div class="form-row">
                 <div class="form-group col">
                     <label for="nacionaliad_slt">Pais de nacionalidad</label>
-                    <select name="nacionalidad_slt" id="" class="form-control">
+                    <select name="nacionaliad_slt" id="" class="form-control">
                     <option value="<?php echo $row["nacionalidad"]??null?>"><?php echo $row["nacionalidad"]??null?></option>
                         <option value="RD">República Dominicana</option>
                         <option value="Cánada">Cánada</option>
